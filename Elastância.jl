@@ -23,7 +23,7 @@ function eᵥ(t, T_sys0 = 0.54, k_r = 0.83)
     end
 end;
 
-t = 0:0.0001:2T
+t = 0:0.0001:2T;
 
 lim = map(eᵥ, t)
 plot(t, lim, label="Lim", size = (600, 200), color="red")
@@ -76,7 +76,7 @@ println(min_t)
 
 n = Int64(√length(p))
 heat = reshape(grid_values, (n, n))
-heatmap(x, x, heat, c=cgrad(:viridis, rev=true), title="Erro entre as curvas", xlabel="\$T_{sys0}\$", ylabel="\$k_r\$")
+heatmap(x, x, heat, c=cgrad(:viridis, rev=true), title="Erro entre as curvas", xlabel="\$k_r\$", ylabel="\$T_{sys0}\$")
 scatter!([min_t[2]],[min_t[1]], legend=false)
 
 plot(t, simaan, label = "E(t) Simaan", color="blue")
